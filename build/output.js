@@ -1,0 +1,1 @@
+(()=>{function o(){console.log("Hello world")}const l=o;o(),l()})();
