@@ -1,0 +1,14 @@
+{
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ES6",
+    "rootDir": ".",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "classic"
+  }
+}
