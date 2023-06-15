@@ -27,7 +27,11 @@
   "homepage": "https://github.com/108times/advanced-frontend#readme",
   "devDependencies": {
     "html-webpack-plugin": "^5.5.1",
+    "ts-loader": "^9.4.3",
     "webpack": "5.69.1",
     "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "typescript": "^4.5.5"
   }
 }
