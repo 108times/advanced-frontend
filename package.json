@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -26,14 +27,18 @@
   },
   "homepage": "https://github.com/108times/advanced-frontend#readme",
   "devDependencies": {
+    "@types/react": "^18.2.58",
+    "@types/react-dom": "^18.2.19",
     "html-webpack-plugin": "^5.5.1",
     "sass": "^1.63.5",
     "sass-loader": "^13.3.2",
-    "ts-loader": "^9.4.3",
+
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^4.5.5"
   }
 }
