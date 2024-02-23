@@ -1,13 +1,17 @@
-import { Configuration } from 'webpack';
+import { Configuration } from "webpack";
 
-export type BuildMode = 'development' | 'production';
+export type BuildMode = Configuration["mode"];
+
 export interface BuildPaths {
   entry: string;
   build: string;
   html: string;
 }
 export interface BuildOptions {
-  isDev: boolean;
-  mode: Configuration['mode'];
+  mode: BuildMode;
   paths: BuildPaths;
 }
+
+export type EnvironmentVariables = {
+  mode: BuildMode;
+};
