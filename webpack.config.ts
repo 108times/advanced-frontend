@@ -1,37 +1,20 @@
 import path from "path";
-import webpack from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import { buildWebpackConfig } from "./config/build/build-webpack-config";
+import { BuildOptions } from "./config/build/types/config";
 
-const config: webpack.Configuration = {
-  mode: "development",
+const mode = "development";
+const isDev = mode === "development";
 
-  entry: path.resolve(__dirname, "src", "index.ts"),
-
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
-    ],
+const options: BuildOptions = {
+  mode,
+  isDev,
+  paths: {
+    entry: path.resolve(__dirname, "src", "index.ts"),
+    build: path.resolve(__dirname, "build"),
+    html: path.resolve(__dirname, "public", "index.html"),
   },
-
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "build"),
-    clean: true,
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
-    }),
-  ],
 };
+
+const config = buildWebpackConfig(options);
 
 export default config;
