@@ -4,6 +4,8 @@ import { BuildOptions } from "./types/config";
 
 export const buildPlugins = ({ paths }: BuildOptions) => {
   return [
+    new ProgressPlugin(),
+
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
