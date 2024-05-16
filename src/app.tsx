@@ -1,25 +1,26 @@
 import { Counter } from "./counter";
 import "./index.scss";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { AboutPage } from "./pages/about-page/AboutPage";
-import { MainPage } from "./pages/main-page/MainPage";
 import { Link } from "react-router-dom";
+import { MainPageAsync } from "./pages/main-page/MainPage.async";
+import { AboutPageAsync } from "./pages/about-page/AboutPage.async";
+import { Suspense } from "react";
 export const App = () => {
   return (
     <div className="app">
-      <BrowserRouter>
-        <nav style={{ display: "flex", gap: "16px" }}>
-          <Link to="/">Главная</Link>
-          <Link to="/about">О нас</Link>
-        </nav>
+      <nav style={{ display: "flex", gap: "16px" }}>
+        <Link to="/">Главная</Link>
+        <Link to="/about">О нас</Link>
+      </nav>
 
-        <hr />
+      <hr />
 
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/" element={<MainPageAsync />} />
+          <Route path="/about" element={<AboutPageAsync />} />
         </Routes>
-      </BrowserRouter>
+      </Suspense>
     </div>
   );
 };
