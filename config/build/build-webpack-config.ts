@@ -17,7 +17,7 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
       rules: buildLoaders(options),
     },
 
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
 
     output: {
       filename: "bundle.js",
