@@ -8,6 +8,6 @@ export function classNames(
   return [
     cls,
     ...additional,
-    ...Object.keys(mods).filter((key) => mods[key]),
+    ...(mods ? Object.keys(mods).filter((key) => mods[key]) : []),
   ].join(" ");
 }
