@@ -11,8 +11,6 @@ interface Props {
 export const Navbar: FC<Props> = ({ className }) => {
   return (
     <nav className={classNames(cls.Navbar, className)}>
-      <ThemeSwitcher />
-
       <div className={cls.links}>
         <AppLink variant={AppLinkVariants.INVERTED} to="/">
           Главная
