@@ -3,27 +3,26 @@ import cls from "./AppLink.module.scss";
 import { classNames } from "shared/lib/class-names/classNames";
 import { Link, LinkProps } from "react-router-dom";
 
-export enum AppLinkTheme {
+export enum AppLinkVariants {
   PRIMARY = "primary",
-  SECONDARY = "secondary",
+  INVERTED = "inverted",
 }
 
 interface Props extends LinkProps {
-  theme?: AppLinkTheme;
+  variant?: AppLinkVariants;
 }
 
 export const AppLink: FC<Props> = (props) => {
   const {
     children,
     className,
-    theme = AppLinkTheme.PRIMARY,
+    variant = AppLinkVariants.PRIMARY,
     ...otherProps
   } = props;
 
-  console.log({ theme }, classNames(cls.AppLink, className, cls[theme]));
   return (
     <Link
-      className={classNames(cls.AppLink, className, cls[theme])}
+      className={classNames(cls.AppLink, className, cls[variant])}
       {...otherProps}
     >
       {children}
