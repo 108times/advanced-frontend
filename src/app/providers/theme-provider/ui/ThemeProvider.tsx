@@ -5,9 +5,9 @@ import {
   ThemeContext,
 } from "../lib/theme-context";
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export const ThemeProvider: FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
