@@ -1,12 +1,26 @@
 {
-  "include": ["src"],
-  "exclude": ["node_modules"],
   "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
     "module": "ESNext",
-    "rootDir": ".",
-    "esModuleInterop": true,
-    "strict": true,
+    "target": "es5",
     "jsx": "react-jsx",
-    "moduleResolution": "Bundler"
-  }
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src/",
+    //
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+
+  "include": ["src"]
 }
