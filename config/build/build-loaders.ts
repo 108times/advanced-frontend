@@ -3,6 +3,26 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 
 export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
+  const babelLoader = {
+    test: /\.(js|ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: ["en", "ru"],
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -38,5 +58,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     type: "asset/resource",
   };
 
-  return [fileLoader, svgLoader, typescriptLoader, cssLoader];
+  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 };
