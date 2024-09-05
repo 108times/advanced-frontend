@@ -1,17 +1,17 @@
-import "./styles/index.scss";
-import { classNames } from "shared/lib/class-names/classNames";
-import { useTheme } from "./providers/theme-provider";
-import { AppRouter } from "./providers/router";
-import { Navbar } from "widgets/navbar/";
-import { Sidebar } from "widgets/sidebar";
-import { Suspense } from "react";
-import "shared/config/i18n/i18n";
+import './styles/index.scss'
+import { classNames } from 'shared/lib/class-names/classNames'
+import { useTheme } from './providers/theme-provider'
+import { AppRouter } from './providers/router'
+import { Navbar } from 'widgets/navbar/'
+import { Sidebar } from 'widgets/sidebar'
+import { Suspense } from 'react'
+import 'shared/config/i18n/i18n'
 
 export const App = () => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
-    <div className={classNames("app", theme)}>
+    <div className={classNames('app', theme)}>
       <Navbar />
 
       <Suspense fallback="">
@@ -21,5 +21,5 @@ export const App = () => {
         </div>
       </Suspense>
     </div>
-  );
-};
+  )
+}

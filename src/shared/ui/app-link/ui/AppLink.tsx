@@ -1,15 +1,15 @@
-import { FC } from "react";
-import cls from "./AppLink.module.scss";
-import { classNames } from "shared/lib/class-names/classNames";
-import { Link, LinkProps } from "react-router-dom";
+import { FC } from 'react'
+import cls from './AppLink.module.scss'
+import { classNames } from 'shared/lib/class-names/classNames'
+import { Link, LinkProps } from 'react-router-dom'
 
 export enum AppLinkVariants {
-  PRIMARY = "primary",
-  INVERTED = "inverted",
+  PRIMARY = 'primary',
+  INVERTED = 'inverted',
 }
 
 interface Props extends LinkProps {
-  variant?: AppLinkVariants;
+  variant?: AppLinkVariants
 }
 
 export const AppLink: FC<Props> = (props) => {
@@ -18,7 +18,7 @@ export const AppLink: FC<Props> = (props) => {
     className,
     variant = AppLinkVariants.PRIMARY,
     ...otherProps
-  } = props;
+  } = props
 
   return (
     <Link
@@ -27,5 +27,5 @@ export const AppLink: FC<Props> = (props) => {
     >
       {children}
     </Link>
-  );
-};
+  )
+}

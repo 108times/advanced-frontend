@@ -1,11 +1,10 @@
-import { FC } from "react";
-import { classNames } from "shared/lib/class-names/classNames";
-import { AppLink, AppLinkVariants } from "shared/ui/app-link/ui/AppLink";
-import { ThemeSwitcher } from "features/theme-switcher";
-import cls from "./Navbar.module.scss";
+import { FC } from 'react'
+import { classNames } from 'shared/lib/class-names/classNames'
+import { AppLink, AppLinkVariants } from 'shared/ui/app-link/ui/AppLink'
+import cls from './Navbar.module.scss'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
 export const Navbar: FC<Props> = ({ className }) => {
@@ -20,5 +19,5 @@ export const Navbar: FC<Props> = ({ className }) => {
         </AppLink>
       </div>
     </nav>
-  );
-};
+  )
+}
