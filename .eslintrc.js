@@ -12,19 +12,18 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
+  parserOptions: { ecmaFeatures: { jsx: true } },
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
+    'prettier/prettier': ['error'],
+    'arrow-body-style': ['error', 'as-needed'],
+    curly: ['multi'],
+    'func-style': 'expression',
+    'max-depth': ['error', 3],
+    'max-lines': ['error', 100],
+    'max-params': ['error', 3],
+    'no-else-return': ['error'],
+    'no-shadow': ['error'],
   },
-  ignorePatterns: ['.eslintrc.js'],
 }
