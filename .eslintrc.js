@@ -3,6 +3,9 @@
  */
 module.exports = {
   root: true,
+  env: {
+    jest: true,
+  },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
   extends: [
@@ -18,12 +21,11 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'prettier/prettier': ['error'],
     'arrow-body-style': ['error', 'as-needed'],
-    curly: ['multi'],
-    'func-style': 'expression',
+    curly: ['error', 'multi'],
+    'func-style': ['error', 'expression'],
     'max-depth': ['error', 3],
     'max-lines': ['error', 100],
     'max-params': ['error', 3],
     'no-else-return': ['error'],
-    'no-shadow': ['error'],
   },
 }
