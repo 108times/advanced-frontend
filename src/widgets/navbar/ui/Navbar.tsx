@@ -7,17 +7,15 @@ interface Props {
   className?: string
 }
 
-export const Navbar: FC<Props> = ({ className }) => {
-  return (
-    <nav className={classNames(cls.Navbar, className)}>
-      <div className={cls.links}>
-        <AppLink variant={AppLinkVariants.INVERTED} to="/">
-          Главная
-        </AppLink>
-        <AppLink variant={AppLinkVariants.INVERTED} to="/about">
-          О нас
-        </AppLink>
-      </div>
-    </nav>
-  )
-}
+export const Navbar: FC<Props> = ({ className }) => (
+  <nav className={classNames(cls.Navbar, className)}>
+    <div className={cls.links}>
+      <AppLink variant={AppLinkVariants.INVERTED} to="/">
+        Главная
+      </AppLink>
+      <AppLink variant={AppLinkVariants.INVERTED} to="/about">
+        О нас
+      </AppLink>
+    </div>
+  </nav>
+)

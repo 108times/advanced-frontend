@@ -26,12 +26,11 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions) => {
     }),
   ]
 
-  if (isDev) {
+  if (isDev)
     plugins.push(
       new ReactRefreshWebpackPlugin(),
       new HotModuleReplacementPlugin()
     )
-  }
 
   return plugins
 }

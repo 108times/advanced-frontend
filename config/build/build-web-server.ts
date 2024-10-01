@@ -3,10 +3,8 @@ import { BuildOptions } from './types/config'
 
 export const buildWebServer = (
   options: BuildOptions
-): DevServerConfiguration => {
-  return {
-    port: options.port,
-    open: true,
-    historyApiFallback: true,
-  }
-}
+): DevServerConfiguration => ({
+  port: options.port,
+  open: true,
+  historyApiFallback: true,
+})
