@@ -4,7 +4,7 @@ type Value = false | undefined | 0 | null | string
 
 type ClassName = Mods | Value
 
-export function classNames(...values: ClassName[]): string {
+export const classNames = (...values: ClassName[]): string => {
   const result: string[] = []
 
   values.forEach((item) => {
