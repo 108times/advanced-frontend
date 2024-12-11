@@ -11,7 +11,9 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "stylelint \"**/*.scss\"",
     "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "analyze:prod": "webpack serve --env mode=production analyze=true",
+    "analyze:dev": "webpack serve --env mode=development analyze=true"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +36,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
     "@types/webpack-dev-server": "^4.7.2",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
@@ -63,6 +66,7 @@
     "typescript-eslint": "^7.16.0",
     "typescript-plugin-css-modules": "^5.1.0",
     "webpack": "^5.69.1",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },

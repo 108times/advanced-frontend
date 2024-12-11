@@ -5,6 +5,7 @@ import { BuildEnv, BuildOptions } from './config/build/types/config'
 export default (env: BuildEnv) => {
   const mode = env.mode ?? 'development'
   const PORT = env.port ?? 3000
+  const analyze = env.analyze ?? false
 
   const isDev = mode === 'development'
 
@@ -20,6 +21,7 @@ export default (env: BuildEnv) => {
     isDev,
     paths,
     port: PORT,
+    analyze,
   }
 
   const config = buildWebpackConfig(options)
