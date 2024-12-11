@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Sidebar: FC<Props> = ({ className }) => {
-  const [collapsed, setCollapsed] = useState(true)
+  const [collapsed, setCollapsed] = useState(false)
 
   const toggleCollapsed = () => {
     setCollapsed((prev) => !prev)
@@ -17,9 +17,12 @@ export const Sidebar: FC<Props> = ({ className }) => {
 
   return (
     <nav
+      data-testid="sidebar"
       className={classNames(cls.Sidebar, className, collapsed && cls.collapsed)}
     >
-      <button onClick={toggleCollapsed}>toggle</button>
+      <button data-testid="sidebar-toggle" onClick={toggleCollapsed}>
+        toggle
+      </button>
 
       <div className={cls.switchers}>
         <ThemeSwitcher />
