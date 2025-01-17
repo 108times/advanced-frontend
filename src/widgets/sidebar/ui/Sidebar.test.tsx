@@ -7,6 +7,7 @@ describe('Sidebar', () => {
 
   test('Test render', () => {
     renderWithTranslation(<SidebarWithTranslation />)
+
     expect(screen.getByTestId('sidebar')).toBeInTheDocument()
   })
 

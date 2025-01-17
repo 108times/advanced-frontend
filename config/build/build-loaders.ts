@@ -1,7 +1,7 @@
 import { RuleSetRule } from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BuildOptions } from './types/config'
 import { getCssLoader } from './loaders/css-loader'
+import { SVG_LOADER } from './loaders/svg-loader'
 
 export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
   const babelLoader = {
@@ -32,10 +32,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     exclude: /node_modules/,
   }
 
-  const svgLoader = {
-    test: /\.svg$/,
-    use: '@svgr/webpack',
-  }
+  const svgLoader = SVG_LOADER
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff|woff2)$/,

@@ -6,6 +6,8 @@ import { Link, LinkProps } from 'react-router-dom'
 export enum AppLinkVariants {
   PRIMARY = 'primary',
   INVERTED = 'inverted',
+  SECONDARY = 'secondary',
+  RED = 'red',
 }
 
 interface Props extends LinkProps {

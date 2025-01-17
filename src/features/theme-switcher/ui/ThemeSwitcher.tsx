@@ -3,6 +3,7 @@ import cls from './ThemeSwitcher.module.scss'
 import { useTheme } from 'app/providers/theme-provider'
 import ThemeIcon from 'shared/assets/icons/theme.svg'
 import { Button, ButtonVariants } from 'shared/ui/button'
+import { classNames } from 'shared/lib/class-names/classNames'
 
 interface Props {
   className?: string
@@ -17,7 +18,7 @@ export const ThemeSwitcher: FC<Props> = ({ className }) => {
       onClick={toggleTheme}
       className={className}
     >
-      <ThemeIcon className={cls[theme]} />
+      <ThemeIcon className={classNames(cls[theme])} />
     </Button>
   )
 }

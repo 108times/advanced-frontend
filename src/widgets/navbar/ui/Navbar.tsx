@@ -10,6 +10,7 @@ interface Props {
 
 export const Navbar: FC<Props> = ({ className }) => {
   const { t } = useTranslation()
+
   return (
     <nav className={classNames(cls.Navbar, className)}>
       <div className={cls.links}>
