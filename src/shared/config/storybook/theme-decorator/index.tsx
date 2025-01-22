@@ -5,7 +5,7 @@ import { AppWrapper } from 'app/ui/AppWrapper'
 
 export const ThemeDecorator = (theme: THEME) => {
   const Decorator = (Story: StoryFn) => (
-    <ThemeProvider defaultTheme={theme}>
+    <ThemeProvider initialTheme={theme}>
       <AppWrapper>
         <Story />
       </AppWrapper>

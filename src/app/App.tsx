@@ -6,7 +6,6 @@ import 'shared/config/i18n/i18n'
 import { AppWrapper } from './ui/AppWrapper'
 
 export const App = () => {
-
   return (
     <AppWrapper>
       <Navbar />

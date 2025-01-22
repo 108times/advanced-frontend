@@ -7,14 +7,14 @@ import {
 
 interface Props {
   children: ReactNode
-  defaultTheme?: THEME
+  initialTheme?: THEME
 }
 
 export const ThemeProvider: FC<Props> = ({
   children,
-  defaultTheme = DEFAULT_THEME,
+  initialTheme = DEFAULT_THEME,
 }) => {
-  const [theme, setTheme] = useState<THEME>(defaultTheme)
+  const [theme, setTheme] = useState<THEME>(initialTheme)
 
   const defaultValue = useMemo(
     () => ({
