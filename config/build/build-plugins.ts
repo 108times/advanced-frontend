@@ -25,9 +25,9 @@ export const buildPlugins = ({ paths, isDev, analyze }: BuildOptions) => {
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-
-    analyze && new BundleAnalyzerPlugin(),
   ]
+
+  if (analyze) plugins.push(new BundleAnalyzerPlugin())
 
   if (isDev)
     plugins.push(
