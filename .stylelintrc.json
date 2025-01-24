@@ -7,7 +7,6 @@
   "rules": {
     "selector-class-pattern": null,
     "length-zero-no-unit": true,
-    "declaration-block-no-duplicate-properties": true,
     "no-irregular-whitespace": true
   }
 }
