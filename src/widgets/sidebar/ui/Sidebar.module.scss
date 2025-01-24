@@ -16,9 +16,23 @@
   display: flex;
   justify-content: center;
   width: 100%;
+
+  .collapsed & {
+    flex-direction: column;
+  }
 }
 
 .lang {
   margin-left: 20px;
-  color: var(--primary-color-inverted)
+  color: var(--primary-color-inverted);
+
+  .collapsed & {
+    margin-left: 0;
+  }
+}
+
+.collapsedBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;
 }
