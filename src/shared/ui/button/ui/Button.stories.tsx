@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Button, ButtonVariants } from './Button'
+import { Button, ButtonSizes, ButtonVariants } from './Button'
 import { ThemeDecorator } from 'shared/config/storybook/theme-decorator'
 import { THEME } from 'app/providers/theme-provider/lib/theme-context'
 
@@ -53,10 +53,66 @@ export const Outlined: Story = {
   },
 }
 
+export const OutlinedSizeL: Story = {
+  args: {
+    children: 'Outlined Button',
+    variant: ButtonVariants.OUTLINE,
+    size: ButtonSizes.L
+  },
+}
+
+export const OutlinedSizeXL: Story = {
+  args: {
+    children: 'Outlined Button',
+    variant: ButtonVariants.OUTLINE,
+    size: ButtonSizes.XL
+  },
+}
+
 export const OutlinedDark: Story = {
   args: {
     children: 'OutlinedDark Button',
     variant: ButtonVariants.OUTLINE,
   },
   decorators: ThemeDecorator(THEME.DARK),
+}
+
+export const Background: Story = {
+  args: {
+    children: 'Background Button',
+    variant: ButtonVariants.BACKGROUND,
+  },
+}
+
+export const BackgroundInverted: Story = {
+  args: {
+    children: 'BackgroundInverted Button',
+    variant: ButtonVariants.BACKGROUND_INVERTED,
+  },
+}
+
+export const Square: Story = {
+  args: {
+    children: '>',
+    variant: ButtonVariants.BACKGROUND,
+    square: true,
+  },
+}
+
+export const SquareSizeL: Story = {
+  args: {
+    children: '>',
+    variant: ButtonVariants.BACKGROUND,
+    square: true,
+    size: ButtonSizes.L,
+  },
+}
+
+export const SquareSizeXL: Story = {
+  args: {
+    children: '>',
+    variant: ButtonVariants.BACKGROUND,
+    square: true,
+    size: ButtonSizes.XL,
+  },
 }
