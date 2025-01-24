@@ -4,9 +4,10 @@ import { useTranslation } from 'react-i18next'
 
 interface Props {
   className?: string
+  short?: boolean
 }
 
-export const LangSwitcher: FC<Props> = ({ className }) => {
+export const LangSwitcher: FC<Props> = ({ className, short }) => {
   const { t, i18n } = useTranslation()
   const toggle = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
@@ -18,7 +19,7 @@ export const LangSwitcher: FC<Props> = ({ className }) => {
       variant={ButtonVariants.CLEAR}
       onClick={toggle}
     >
-      {t('Язык')}
+      {short ? t("Короткий язык") : t('Язык')}
     </Button>
   )
 }
